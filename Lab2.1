@@ -1,0 +1,40 @@
+<form method="post"  action ="b3.php">
+    <label for="so_a"></label>
+    <input type="text" name="so_a"  required>
+    <label for="so_b">x +  </label>
+    <input type="text" name="so_b"  required>
+    <label for = " " > = 0 </label>
+    <input type="submit" value="Kết quả">
+</form>
+
+<?php
+$so_a = "";
+$so_b = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $so_a = htmlspecialchars($_POST["so_a"]);
+    $so_b = htmlspecialchars($_POST["so_b"]);
+    if (is_numeric($so_a) && is_numeric($so_b)) {
+        if ($so_a!=0)  {
+            if ($so_b!=0) { 
+                $x = -$so_b/$so_a;
+                echo "Phương trình có nghiệm là : $x";
+            } else {
+                echo "Phương trình có nghiệm là x = 0";
+            }
+            return;
+        }    
+        if ($so_a==0) {
+            if ($so_b!=0) {
+                echo "Phương trình đã cho vô nghiệm ";
+            }   else {
+                    echo "Phương trình có vô số nghiệm ";
+            }    
+                return;
+        }
+
+    }   else {
+            echo "Mời nhập số !";
+    }
+    return;  
+}
+?>
