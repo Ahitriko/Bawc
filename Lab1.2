@@ -1,0 +1,37 @@
+<form method="post" 
+    <label for="number1">Nhập số thứ nhất:</label>
+    <input type="text" name="number1"  required><br>
+
+    <label for="number2">Nhập số thứ hai:</label>
+    <input type="text" name="number2"  required><br>
+
+    <input type="submit" value="Tính tổng">
+</form>
+
+<?php
+$number1 = " ";
+$number2 = " ";
+
+if (isset ( $_POST ['heso_a'] )) {
+    $heso_a = $_POST ['heso_a'];
+}
+if (isset ( $_POST ['heso_b'] )) {
+    $heso_b = $_POST ['heso_b'];
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number1 = $_POST["number1"];
+    $number2 = $_POST["number2"];
+    if (is_numeric($number1) && is_numeric($number2)) {
+        $tong = $number1 + $number2;
+        $hieu = $number1 - $number2;
+        $tich = $number1 * $number2;
+        $thuong = $number1 / $number2;
+        echo "Tổng là : " . $tong . "<br> Hiệu là : " . $hieu . "<br> Tích là : " . $tich . "<br> Thương là : " . $thuong . "<br> END";
+
+    } else {
+        echo "Nhập số hợp lệ.";
+    }
+}
+?>
+
+
