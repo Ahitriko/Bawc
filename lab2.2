@@ -1,0 +1,20 @@
+<form method="post" action="b4.php">
+    Nhập giá trị n: <input type="number" name="n" required>
+    <input type="submit" value="Tổng">
+</form>
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $n = htmlspecialchars($_POST["n"]);
+        if (is_numeric($n) && $n > 0) {
+            $tong = ($n * ($n + 1)) / 2;
+            echo "Tổng từ 1 đến $n là: $tong";
+        } else {
+            echo "Nhập một số nguyên dương!";
+        }
+        return;
+    }
+
+?>
+//Kết quả:
+(https://github.com/Ahitriko/Bawc/assets/151734752/ef789dd7-bf17-476d-920f-03c32c68f02d)
+    
