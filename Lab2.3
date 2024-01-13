@@ -1,0 +1,16 @@
+<form method="POST" action =" ">
+Giai thừa từ 1 đến n là: <input type="text" name="n">
+<input type="submit" valua ="Kết quả">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $n=$_POST["n"];
+    $gt=1;
+    for ($i=1; $i<=$n ;$i++){
+        $gt*=$i;
+    }
+    echo "Giai thừa từ 1 đến $n là: $gt";
+}
+?>
+//Kết quả
+![image](https://github.com/Ahitriko/Bawc/assets/151734752/7f353c7a-f0e3-4fcc-9e5f-d6276eaa98c8)
