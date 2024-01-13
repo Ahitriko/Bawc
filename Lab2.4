@@ -1,0 +1,18 @@
+<?php
+$my_array = array('EHC', 'HackYourLimits', 'Training');
+$maxlength=0;
+$minlength= 1000;
+foreach ($my_array as $array){
+$length = strlen($array);
+if ($length<$minlength){
+    $minlength=$length;
+}
+if ($length>$maxlength){
+    $maxlength=$length;
+}
+}
+echo "minlength :$minlength; <br>";
+echo "maxlength :$maxlength; ";
+?>
+//kết quả
+![image](https://github.com/Ahitriko/Bawc/assets/151734752/8d8e59d1-dd12-4090-872c-c2150777a98c)
