@@ -1,0 +1,25 @@
+
+<form action="" method="post">
+    <h2> Login </h2>
+    Username : <input type="text" name="username"><br>
+    Password : <input type="text" name="password"><br>
+    <input type ="submit">
+</form>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $username= $_POST["username"];
+    $password= $_POST["password"];
+    if ($username === "user" && $password === "123456") {
+        echo "Welcome $username!";
+    }else {
+        echo "User or password incorrect!";
+    }
+    return;
+    if ($username === "admin" && $password === "123123"){
+        echo "Welcome $username !";
+    } else {
+        echo "User or password incorrect!";
+    }
+    return;
+}
+?>
